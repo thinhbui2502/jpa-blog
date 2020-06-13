@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Detail</title>
+</head>
+<body>
+<h1><span th:text="${category.getName()}"></span>'s Blog List</h1>
+<table border="1px" cellpadding="5px" cellspacing="0">
+    <tr>
+        <th>Category</th>
+        <th>Blog's title</th>
+        <th>Author</th>
+    </tr>
+
+    <th:block th:each="blog: ${blogs}">
+        <tr>
+            <td th:text="${blog.getCategory().getName()}"></td>
+            <td><a th:href="@{/view-blog/{id}(id=${blog.getId()})}"><label th:text="${blog.getName()}"></label></a></td>
+            <td th:text="${blog.getAuthor()}"></td>
+        </tr>
+    </th:block>
+</table>
+
+</body>
+</html>

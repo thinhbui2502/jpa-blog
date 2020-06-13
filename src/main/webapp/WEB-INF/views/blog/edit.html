@@ -18,6 +18,17 @@
     <input th:type="hidden" name="id" th:field="*{id}">
     <table border="1px" cellpadding="5" cellspacing="0">
         <tr>
+            <td>Category:</td>
+            <td>
+                <select name="category">
+                    <option th:each="category: ${categories}"
+                            th:value="${category.id}" th:text="${category.name}"
+                            th:selected="(${category.id} == *{category.id})">
+                    </option>
+                </select>
+            </td>
+        </tr>
+        <tr>
             <th>Title: </th>
             <td><input type="text" th:field="*{name}"></td>
         </tr>
