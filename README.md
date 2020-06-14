@@ -1,5 +1,4 @@
-# jpa-blog
-[Bài tập] Tạo ứng dụng Blog
+# Ứng dụng Blog
 
 Tính năng:
 - Thêm sửa xóa blog
